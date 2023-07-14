@@ -32,10 +32,10 @@ namespace Quartzified.Resolve.Editor
 
         [Header("Debug Message")]
         public bool adjustMessageColor = false;
-        public bool adjustNumeralColor = false;
+        public bool adjustNumeralColor = true;
 
         [Space]
-        public Color defaultMessageColor = Color.gray;
+        public Color defaultMessageColor = Color.white;
         public Color warningMessageColor = Color.yellow;
         public Color errorMessageColor = Color.red;
 
@@ -64,8 +64,8 @@ namespace Quartzified.Resolve.Editor
 
         [Space]
         public int ColorSeed = 417;
-        public float ColorSaturation = 0.8f;
-        public float ColorValue = 0.8f;
+        public float ColorSaturation = 0.6f;
+        public float ColorValue = 0.95f;
 
 
 #if UNITY_EDITOR
