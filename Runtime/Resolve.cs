@@ -43,6 +43,18 @@ namespace Quartzified.Resolve
             }
         }
 
+        public static bool showTimestampsAtStart
+        {
+            set
+            {
+                ResolveSettings.showTimestampAtStart = value;
+            }
+            get
+            {
+                return ResolveSettings.showTimestampAtStart;
+            }
+        }
+
         #region Log
 
         public static void Log(string message)
@@ -101,7 +113,13 @@ namespace Quartzified.Resolve
             string beutifyMessage = ResolveUtility.BeutifyMessage(logType, message.ToString());
 
             StringBuilder builder = new StringBuilder();
-            builder.Append(timeStamp);
+#if UNITY_EDITOR
+            if(!ResolveEditorSettings.instance.showTimestampAtStart)
+                builder.Append(timeStamp);
+#else
+            if(!ResolveSettings.showTimestampAtStart)
+                builder.Append(timeStamp);
+#endif
             builder.Append(typeResult);
             builder.Append(beutifyMessage);
 
@@ -111,9 +129,15 @@ namespace Quartzified.Resolve
                 if (ResolveEditorSettings.instance.enableDebugTag)
                     builder.Insert(0, ResolveEditorSettings.instance.enableDebugColor ? 
                         "[Error] ".SetColor(ResolveEditorSettings.instance.errorColor) : "[Error] ");
+
+                if (ResolveEditorSettings.instance.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #else
                 if (ResolveSettings.showDebugTag)
                     builder.Insert(0, "[Error] ");
+
+                if (ResolveSettings.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #endif
                 
                 // TODO add runtime setting
@@ -126,9 +150,15 @@ namespace Quartzified.Resolve
                 if (ResolveEditorSettings.instance.enableDebugTag)
                     builder.Insert(0, ResolveEditorSettings.instance.enableDebugColor ?
                         "[Warning] ".SetColor(ResolveEditorSettings.instance.warningColor) : "[Warning] ");
+
+                if (ResolveEditorSettings.instance.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #else
                 if (ResolveSettings.showDebugTag)
                     builder.Insert(0, "[Warning] ");
+
+                if (ResolveSettings.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #endif
 
                 Debug.LogWarning(builder.ToString(), context);
@@ -139,9 +169,15 @@ namespace Quartzified.Resolve
                 if (ResolveEditorSettings.instance.enableDebugTag)
                     builder.Insert(0, ResolveEditorSettings.instance.enableDebugColor ?
                         "[Debug] ".SetColor(ResolveEditorSettings.instance.debugColor) : "[Debug] ");
+
+                if (ResolveEditorSettings.instance.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #else
                 if (ResolveSettings.showDebugTag)
                     builder.Insert(0, "[Debug] ");
+
+                if (ResolveSettings.showTimestampAtStart)
+                    builder.Insert(0, timeStamp);
 #endif
 
                 Debug.Log(builder.ToString(), context);

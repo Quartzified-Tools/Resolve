@@ -5,6 +5,7 @@ namespace Quartzified.Resolve
     {
         public static bool showDebugTag = true;
 
+        public static bool showTimestampAtStart = true;
         public static bool showTimestamp = false;
         public static bool showMilliseconds = false;
     }

@@ -73,7 +73,7 @@ namespace Quartzified.Resolve
         public static string GetTimeStamp()
         {
 #if UNITY_EDITOR
-            if(editorSettings.showTimeStamp)
+            if(editorSettings.showTimestamp)
             {
                 return (editorSettings.showMilliseconds ? DateTime.Now.ToString("[HH:mm:ss.fff] ") : DateTime.Now.ToString("[HH:mm:ss] ")).SetColor(editorSettings.timeStampColor);
             }

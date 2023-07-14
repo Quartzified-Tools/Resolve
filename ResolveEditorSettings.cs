@@ -52,7 +52,8 @@ namespace Quartzified.Resolve.Editor
         public Color errorColor = Color.red;
 
         [Header("Time Stamping")]
-        public bool showTimeStamp = true;
+        public bool showTimestampAtStart = true;
+        public bool showTimestamp = true;
         public bool showMilliseconds;
 
         [Space]
