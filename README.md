@@ -13,7 +13,7 @@ public class IHaveMommyIssues
   {
       // Works just as Debug.Log but instead its Resolve.Log
       Resolve.Log("Truth or Dare!");
-      Resolve.Logwarning("Truth...");
+      Resolve.LogWarning("Truth...");
 
       Resolve.Log("Do you have Mommy issues?");
 
