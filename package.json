@@ -1,0 +1,21 @@
+{
+    "name": "com.quartzified.resolve",
+    "version": "0.1.0",
+    "displayName": "Resolve",
+    "description": "Resolve, a good looking Debugger.",
+    "unity": "2022.3",
+    "unityRelease": "2f1",
+    "documentationUrl": "",
+    "changelogUrl": "",
+    "licensesUrl": "",
+    "keywords": [
+        "Quartzified",
+        "Resolve"
+    ],
+    "author": {
+        "name": "Quartzi",
+        "email": "",
+        "url": "https://www.quartzi.io"
+    },
+    "type": "tool"
+}
