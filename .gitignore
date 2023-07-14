@@ -2,7 +2,7 @@
 /[Ss]cripts*
 
 LICENSE.meta
-README.meta
+README.md.meta
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
