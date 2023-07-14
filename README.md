@@ -1,5 +1,29 @@
 # Resolve
 A good looking debugger for Unity.
+<hr>
+
+### How do I use it?  
+Don't worry. The design is very human.
+```cs
+using Quartzified.Resolve;
+
+public class IHaveMommyIssues
+{
+  void Start()
+  {
+      // Works just as Debug.Log but instead its Resolve.Log
+      Resolve.Log("Truth or Dare!");
+      Resolve.Logwarning("Truth...");
+
+      Resolve.Log("Do you have Mommy issues?");
+
+      // To Log with the Class Type just mention it as the last variable.
+      Resolve.Log("I swear I don't have mommy issues", typeof(IHaveMommyIssues));
+  }
+  
+}
+```
+<hr>
 
 ## Colorful Numbers
 ![image](https://github.com/Quartzified-Tools/Resolve/assets/34374881/11da4305-4ef1-4c30-bfaf-51ad34f031f1)  
